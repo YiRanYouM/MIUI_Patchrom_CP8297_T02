@@ -432,6 +432,13 @@
     # invokes: Lcom/android/server/NotificationManagerService;->updateNotificationPulse()V
     invoke-static {v1}, Lcom/android/server/NotificationManagerService;->access$1600(Lcom/android/server/NotificationManagerService;)V
 
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/NotificationManagerService$5;->this$0:Lcom/android/server/NotificationManagerService;
+
+    # invokes: Lcom/android/server/NotificationManagerService;->updateNotificationPulse()V
+    invoke-static {v1}, Lcom/android/server/NotificationManagerService;->access_updateNotificationPulse(Lcom/android/server/NotificationManagerService;)V
+
     goto :goto_4
 
     .line 1248

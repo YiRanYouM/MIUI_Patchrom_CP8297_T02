@@ -648,7 +648,34 @@
     .param p2, "device"    # I
 
     .prologue
-    .line 3656
+    iget v0, p0, Landroid/media/AudioService$VolumeStreamState;->mStreamType:I
+
+    if-nez v0, :cond_miui_0
+
+    iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
+
+    # getter for: Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
+    invoke-static {v0}, Landroid/media/AudioService;->access_mVolumePanel(Landroid/media/AudioService;)Lmiui/view/VolumePanel;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lmiui/view/VolumePanel;->isVoiceMutable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_miui_0
+
+    invoke-virtual {p0, p2}, Landroid/media/AudioService$VolumeStreamState;->getIndex(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p1
+
+    if-gtz v0, :cond_miui_0
+
+    const/4 p1, 0x0
+
+    :cond_miui_0
     invoke-virtual {p0, p2}, Landroid/media/AudioService$VolumeStreamState;->getIndex(I)I
 
     move-result v0

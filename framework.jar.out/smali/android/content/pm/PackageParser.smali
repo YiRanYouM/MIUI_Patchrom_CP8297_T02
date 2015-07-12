@@ -16834,12 +16834,10 @@
 
     move-result v25
 
-    .line 524
     .local v25, "cookie":I
     if-eqz v25, :cond_4
 
-    .line 525
-    new-instance v32, Landroid/content/res/Resources;
+    new-instance v32, Landroid/content/res/MiuiResources;
 
     const/4 v6, 0x0
 
@@ -16847,7 +16845,7 @@
 
     move-object/from16 v1, p3
 
-    invoke-direct {v0, v5, v1, v6}, Landroid/content/res/Resources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V
+    invoke-direct {v0, v5, v1, v6}, Landroid/content/res/MiuiResources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 

@@ -2438,6 +2438,7 @@
     .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_16} :catch_1
     .catchall {:try_start_16 .. :try_end_16} :catchall_0
 
+    :cond_miui_0
     move v6, v5
 
     .line 5199

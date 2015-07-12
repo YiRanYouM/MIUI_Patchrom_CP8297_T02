@@ -13145,6 +13145,19 @@
 
     .line 5452
     :try_start_0
+    const/4 v9, 0x1
+
+    if-ne p2, v9, :cond_miui_0
+
+    iget-object v9, p0, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {p0, v9, v3, v0}, Lcom/android/server/ConnectivityService;->showLogin(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_miui_0
     const-string v9, "CaptivePortal.Notification"
 
     invoke-virtual {v5, v9, p2, v4}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
@@ -22272,6 +22285,65 @@
     goto :goto_0
 .end method
 
+.method showLogin(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V
+    .locals 4
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
+    .param p3, "ssid"    # Ljava/lang/String;
+
+    .prologue
+    const-string v2, "wifi"
+
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/net/wifi/WifiManager;
+
+    .local v1, "wifiManager":Landroid/net/wifi/WifiManager;
+    invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
+
+    move-result-object v0
+
+    .local v0, "wifiInfo":Landroid/net/wifi/WifiInfo;
+    const-string v2, "com.miui.action.OPEN_WIFI_LOGIN"
+
+    invoke-virtual {p2, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string v2, "com.android.settings"
+
+    invoke-virtual {p2, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string v2, "miui.intent.extra.OPEN_WIFI_SSID"
+
+    invoke-virtual {p2, v2, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p3, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const-string v2, "miui.intent.extra.BSSID"
+
+    invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getBSSID()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    :cond_0
+    invoke-virtual {p1, p2}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+    return-void
+.end method
+
 .method public startLegacyVpn(Lcom/android/internal/net/VpnProfile;)V
     .locals 5
     .param p1, "profile"    # Lcom/android/internal/net/VpnProfile;
@@ -26733,12 +26805,26 @@
     goto :goto_0
 .end method
 
-.method public stopUsingNetworkFeature(ILjava/lang/String;)I
+.method private processStopUsingNetworkFeature(ILjava/lang/String;I)I
     .locals 8
     .param p1, "networkType"    # I
     .param p2, "feature"    # Ljava/lang/String;
 
     .prologue
+    const/4 v1, 0x3
+
+    const/4 v2, 0x1
+
+    const/4 v3, -0x1
+
+    if-le p3, v3, :cond_miui_0
+
+    if-le p3, v1, :cond_miui_1
+
+    :cond_miui_0
+    return v1
+
+    :cond_miui_1
     const/4 v6, 0x1
 
     .line 1713
@@ -26797,39 +26883,31 @@
 
     if-eqz v7, :cond_0
 
-    .line 1724
     move-object v3, v5
 
-    .line 1725
     const/4 v0, 0x1
 
-    .line 1729
     .end local v5    # "x":Lcom/android/server/ConnectivityService$FeatureUser;
     :cond_1
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1730
     if-eqz v0, :cond_2
 
     if-eqz v3, :cond_2
 
-    .line 1731
     const-string v7, "stopUsingNetworkFeature: X"
 
     invoke-static {v7}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
-    .line 1733
-    invoke-direct {p0, v3, v6}, Lcom/android/server/ConnectivityService;->stopUsingNetworkFeature(Lcom/android/server/ConnectivityService$FeatureUser;Z)I
+    invoke-direct {p0, v3, v6, p3}, Lcom/android/server/ConnectivityService;->stopUsingNetworkFeature(Lcom/android/server/ConnectivityService$FeatureUser;ZI)I
 
     move-result v6
 
-    .line 1737
     :goto_0
     return v6
 
-    .line 1729
     .end local v1    # "i$":Ljava/util/Iterator;
     :catchall_0
     move-exception v6
@@ -27314,4 +27392,18 @@
     invoke-direct {p0, v0}, Lcom/android/server/ConnectivityService;->setLockdownTracker(Lcom/android/server/net/LockdownVpnTracker;)V
 
     goto :goto_1
+.end method
+
+.method static synthetic access_stopUsingNetworkFeature(Lcom/android/server/ConnectivityService;Lcom/android/server/ConnectivityService$FeatureUser;ZI)I
+    .locals 1
+    .param p0, "x0"    # Lcom/android/server/ConnectivityService;
+    .param p1, "x1"    # Lcom/android/server/ConnectivityService$FeatureUser;
+    .param p2, "x2"    # Z
+
+    .prologue
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/server/ConnectivityService;->stopUsingNetworkFeature(Lcom/android/server/ConnectivityService$FeatureUser;ZI)I
+
+    move-result v0
+
+    return v0
 .end method

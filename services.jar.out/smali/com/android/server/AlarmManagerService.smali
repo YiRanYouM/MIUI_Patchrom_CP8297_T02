@@ -7,6 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/AlarmManagerService$ResultReceiver;,
+        Lcom/android/server/AlarmManagerService$Injector;,
         Lcom/android/server/AlarmManagerService$UninstallReceiver;,
         Lcom/android/server/AlarmManagerService$ClockReceiver;,
         Lcom/android/server/AlarmManagerService$UpdateXmlReceiver;,

@@ -3086,6 +3086,21 @@
 
     .line 751
     :try_start_1
+    iget v0, v7, Landroid/view/WindowManager$LayoutParams;->flags:I
+
+    and-int/lit8 v0, v0, 0x4
+
+    if-eqz v0, :cond_miui_0
+
+    iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceControl:Landroid/view/SurfaceControl;
+
+    const/16 v1, 0x80
+
+    const/16 v2, 0x80
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/SurfaceControl;->setFlags(II)V
+
+    :cond_miui_0
     iget-object v0, p0, Lcom/android/server/wm/WindowStateAnimator;->mWin:Lcom/android/server/wm/WindowState;
 
     iget-object v0, v0, Lcom/android/server/wm/WindowState;->mFrame:Landroid/graphics/Rect;
@@ -5581,32 +5596,32 @@
 
     if-eqz v3, :cond_1
 
-    .line 1421
     :cond_0
     int-to-float v3, v1
 
     iput v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceX:F
 
-    .line 1422
     int-to-float v3, v2
 
     iput v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceY:F
 
-    .line 1423
     iget-boolean v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mAnimating:Z
 
     if-eqz v3, :cond_2
 
-    .line 1447
+    iget v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mAttrType:I
+
+    const/16 v4, 0x7dd
+
+    if-eq v3, v4, :cond_2
+
     :cond_1
     :goto_0
     return-void
 
-    .line 1432
     :cond_2
     invoke-static {}, Landroid/view/SurfaceControl;->openTransaction()V
 
-    .line 1436
     :try_start_0
     iget-object v3, p0, Lcom/android/server/wm/WindowStateAnimator;->mSurfaceControl:Landroid/view/SurfaceControl;
 

@@ -206,6 +206,8 @@
 
 .field public densityDpi:I
 
+.field public extraConfig:Landroid/content/res/MiuiConfiguration;
+
 .field public fontScale:F
 
 .field public hardKeyboardHidden:I
@@ -380,14 +382,21 @@
 
     and-int/2addr v0, p0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    invoke-static {p0}, Landroid/content/res/MiuiConfiguration;->needNewResources(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
@@ -788,127 +797,110 @@
 
     sub-int v4, v5, v6
 
-    .line 1347
     if-nez v4, :cond_2
 
-    .line 1348
     iget v5, p0, Landroid/content/res/Configuration;->keyboard:I
 
     iget v6, p1, Landroid/content/res/Configuration;->keyboard:I
 
     sub-int v4, v5, v6
 
-    .line 1349
     if-nez v4, :cond_2
 
-    .line 1350
     iget v5, p0, Landroid/content/res/Configuration;->keyboardHidden:I
 
     iget v6, p1, Landroid/content/res/Configuration;->keyboardHidden:I
 
     sub-int v4, v5, v6
 
-    .line 1351
     if-nez v4, :cond_2
 
-    .line 1352
     iget v5, p0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
     iget v6, p1, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
     sub-int v4, v5, v6
 
-    .line 1353
     if-nez v4, :cond_2
 
-    .line 1354
     iget v5, p0, Landroid/content/res/Configuration;->navigation:I
 
     iget v6, p1, Landroid/content/res/Configuration;->navigation:I
 
     sub-int v4, v5, v6
 
-    .line 1355
     if-nez v4, :cond_2
 
-    .line 1356
     iget v5, p0, Landroid/content/res/Configuration;->navigationHidden:I
 
     iget v6, p1, Landroid/content/res/Configuration;->navigationHidden:I
 
     sub-int v4, v5, v6
 
-    .line 1357
     if-nez v4, :cond_2
 
-    .line 1358
     iget v5, p0, Landroid/content/res/Configuration;->orientation:I
 
     iget v6, p1, Landroid/content/res/Configuration;->orientation:I
 
     sub-int v4, v5, v6
 
-    .line 1359
     if-nez v4, :cond_2
 
-    .line 1360
     iget v5, p0, Landroid/content/res/Configuration;->screenLayout:I
 
     iget v6, p1, Landroid/content/res/Configuration;->screenLayout:I
 
     sub-int v4, v5, v6
 
-    .line 1361
     if-nez v4, :cond_2
 
-    .line 1362
     iget v5, p0, Landroid/content/res/Configuration;->uiMode:I
 
     iget v6, p1, Landroid/content/res/Configuration;->uiMode:I
 
     sub-int v4, v5, v6
 
-    .line 1363
     if-nez v4, :cond_2
 
-    .line 1364
     iget v5, p0, Landroid/content/res/Configuration;->screenWidthDp:I
 
     iget v6, p1, Landroid/content/res/Configuration;->screenWidthDp:I
 
     sub-int v4, v5, v6
 
-    .line 1365
     if-nez v4, :cond_2
 
-    .line 1366
     iget v5, p0, Landroid/content/res/Configuration;->screenHeightDp:I
 
     iget v6, p1, Landroid/content/res/Configuration;->screenHeightDp:I
 
     sub-int v4, v5, v6
 
-    .line 1367
     if-nez v4, :cond_2
 
-    .line 1368
     iget v5, p0, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
     iget v6, p1, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
     sub-int v4, v5, v6
 
-    .line 1369
     if-nez v4, :cond_2
 
-    .line 1370
     iget v5, p0, Landroid/content/res/Configuration;->densityDpi:I
 
     iget v6, p1, Landroid/content/res/Configuration;->densityDpi:I
 
     sub-int v4, v5, v6
 
-    .line 1372
+    iget-object v3, p0, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/MiuiConfiguration;
+
+    iget-object v4, p1, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/MiuiConfiguration;
+
+    invoke-virtual {v3, v4}, Landroid/content/res/MiuiConfiguration;->compareTo(Landroid/content/res/MiuiConfiguration;)I
+
+    move-result v2
+
     goto/16 :goto_0
 .end method
 
@@ -1561,6 +1553,16 @@
     :cond_0
     add-int v0, v1, v2
 
+    mul-int/lit8 v1, v0, 0x1f
+
+    iget-object v2, p0, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/MiuiConfiguration;
+
+    invoke-virtual {v2}, Landroid/content/res/MiuiConfiguration;->hashCode()I
+
+    move-result v2
+
+    add-int v0, v1, v2
+
     .line 1412
     return v0
 
@@ -1911,6 +1913,10 @@
 
     iput v1, p0, Landroid/content/res/Configuration;->screenLayout:I
 
+    iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/MiuiConfiguration;
+
+    invoke-virtual {v0, p1}, Landroid/content/res/MiuiConfiguration;->readFromParcel(Landroid/os/Parcel;)V
+
     .line 1455
     return-void
 .end method
@@ -2144,74 +2150,64 @@
 
     const/4 v1, 0x0
 
-    .line 836
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Landroid/content/res/Configuration;->fontScale:F
 
-    .line 842
     iput-object v2, p0, Landroid/content/res/Configuration;->defaultFontName:Ljava/lang/String;
 
-    .line 845
     iput v1, p0, Landroid/content/res/Configuration;->mnc:I
 
     iput v1, p0, Landroid/content/res/Configuration;->mcc:I
 
-    .line 846
     iput-object v2, p0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    .line 847
     iput-boolean v1, p0, Landroid/content/res/Configuration;->userSetLocale:Z
 
-    .line 848
     iput v1, p0, Landroid/content/res/Configuration;->touchscreen:I
 
-    .line 849
     iput v1, p0, Landroid/content/res/Configuration;->keyboard:I
 
-    .line 850
     iput v1, p0, Landroid/content/res/Configuration;->keyboardHidden:I
 
-    .line 851
     iput v1, p0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
-    .line 852
     iput v1, p0, Landroid/content/res/Configuration;->navigation:I
 
-    .line 853
     iput v1, p0, Landroid/content/res/Configuration;->navigationHidden:I
 
-    .line 854
     iput v1, p0, Landroid/content/res/Configuration;->orientation:I
 
-    .line 855
     iput v1, p0, Landroid/content/res/Configuration;->screenLayout:I
 
-    .line 856
     iput v1, p0, Landroid/content/res/Configuration;->uiMode:I
 
-    .line 857
     iput v1, p0, Landroid/content/res/Configuration;->compatScreenWidthDp:I
 
     iput v1, p0, Landroid/content/res/Configuration;->screenWidthDp:I
 
-    .line 858
     iput v1, p0, Landroid/content/res/Configuration;->compatScreenHeightDp:I
 
     iput v1, p0, Landroid/content/res/Configuration;->screenHeightDp:I
 
-    .line 859
     iput v1, p0, Landroid/content/res/Configuration;->compatSmallestScreenWidthDp:I
 
     iput v1, p0, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
-    .line 860
     iput v1, p0, Landroid/content/res/Configuration;->densityDpi:I
 
-    .line 861
     iput v1, p0, Landroid/content/res/Configuration;->seq:I
 
-    .line 862
+    iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/MiuiConfiguration;
+
+    iget-object v1, p1, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/MiuiConfiguration;
+
+    invoke-virtual {v0, v1}, Landroid/content/res/MiuiConfiguration;->setTo(Landroid/content/res/MiuiConfiguration;)V
+
+    iget-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/MiuiConfiguration;
+
+    invoke-virtual {v0}, Landroid/content/res/MiuiConfiguration;->setToDefaults()V
+
     return-void
 .end method
 
@@ -2587,36 +2583,38 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 807
     :goto_13
     iget v2, p0, Landroid/content/res/Configuration;->seq:I
 
     if-eqz v2, :cond_0
 
-    .line 808
     const-string v2, " s."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 809
     iget v2, p0, Landroid/content/res/Configuration;->seq:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 811
     :cond_0
+    iget-object v2, p0, Landroid/content/res/Configuration;->extraConfig:Landroid/content/res/MiuiConfiguration;
+
+    invoke-virtual {v2}, Landroid/content/res/MiuiConfiguration;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     const/16 v2, 0x7d
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 812
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 677
     .end local v0    # "layoutDir":I
     :cond_1
     const-string v2, "(default font)"

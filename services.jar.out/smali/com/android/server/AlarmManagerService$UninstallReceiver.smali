@@ -254,6 +254,10 @@
     .line 1766
     :cond_3
     :goto_2
+    invoke-static {v7}, Lcom/android/server/AlarmManagerService$Injector;->filterPersistPackages([Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v7
+
     if-eqz v7, :cond_7
 
     array-length v9, v7

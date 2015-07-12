@@ -526,14 +526,13 @@
     .param p0, "argv"    # [Ljava/lang/String;
 
     .prologue
-    .line 598
     :try_start_0
     invoke-static {}, Lcom/android/internal/os/SamplingProfilerIntegration;->start()V
 
-    .line 600
+    invoke-static {}, Lmiui/security/SecurityManager;->init()V
+
     invoke-static {}, Lcom/android/internal/os/ZygoteInit;->registerZygoteSocket()V
 
-    .line 601
     const/16 v2, 0xbcc
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -1489,6 +1488,13 @@
     return v0
 .end method
 
+.method private static preloadMiuiResources()V
+    .locals 0
+
+    .prologue
+    return-void
+.end method
+
 .method private static preloadOpenGL()V
     .locals 2
 
@@ -1621,12 +1627,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 388
+    invoke-static {}, Lcom/android/internal/os/ZygoteInit;->preloadMiuiResources()V
+
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
 
-    .line 389
     sget-object v6, Lcom/android/internal/os/ZygoteInit;->mResources:Landroid/content/res/Resources;
 
     const v7, 0x1070006
@@ -1635,15 +1641,12 @@
 
     move-result-object v1
 
-    .line 391
     invoke-static {v3, v1}, Lcom/android/internal/os/ZygoteInit;->preloadColorStateLists(Ldalvik/system/VMRuntime;Landroid/content/res/TypedArray;)I
 
     move-result v0
 
-    .line 392
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 393
     const-string v6, "Zygote"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1688,19 +1691,18 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 400
     const-string v6, "Zygote"
 
     const-string v7, "Preloading CP_Common resources..."
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 402
+    .line 388
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
 
-    .line 403
+    .line 389
     sget-object v6, Lcom/android/internal/os/ZygoteInit;->mResources:Landroid/content/res/Resources;
 
     const/high16 v7, 0x2070000

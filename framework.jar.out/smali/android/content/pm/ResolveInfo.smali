@@ -945,44 +945,40 @@
 
     move-result-object v2
 
-    .line 206
     .local v2, "dr":Landroid/graphics/drawable/Drawable;
+    invoke-static {v2}, Lmiui/content/res/IconCustomizer;->generateIconStyleDrawable(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/BitmapDrawable;
+
+    move-result-object v2
+
     if-eqz v2, :cond_1
 
-    .line 223
     .end local v2    # "dr":Landroid/graphics/drawable/Drawable;
     :cond_0
     :goto_0
     return-object v2
 
-    .line 210
     :cond_1
     invoke-direct {p0}, Landroid/content/pm/ResolveInfo;->getComponentInfo()Landroid/content/pm/ComponentInfo;
 
     move-result-object v1
 
-    .line 211
     .local v1, "ci":Landroid/content/pm/ComponentInfo;
     iget-object v0, v1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 212
     .local v0, "ai":Landroid/content/pm/ApplicationInfo;
     iget v3, p0, Landroid/content/pm/ResolveInfo;->icon:I
 
     if-eqz v3, :cond_2
 
-    .line 214
     iget-object v3, v1, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
 
     invoke-direct {p0, p1, v3, v0}, Landroid/content/pm/ResolveInfo;->loadDrawableFromTheme(Landroid/content/pm/PackageManager;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 218
     .restart local v2    # "dr":Landroid/graphics/drawable/Drawable;
     if-nez v2, :cond_0
 
-    .line 223
     .end local v2    # "dr":Landroid/graphics/drawable/Drawable;
     :cond_2
     invoke-virtual {v1, p1}, Landroid/content/pm/ComponentInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;

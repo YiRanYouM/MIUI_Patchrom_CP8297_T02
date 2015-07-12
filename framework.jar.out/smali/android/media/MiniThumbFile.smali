@@ -3,6 +3,14 @@
 .source "MiniThumbFile.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/media/MiniThumbFile$Injector;
+    }
+.end annotation
+
+
 # static fields
 .field public static final BYTES_PER_INDEX:I = 0x8
 
@@ -411,22 +419,18 @@
     .locals 7
 
     .prologue
-    .line 108
     iget-object v4, p0, Landroid/media/MiniThumbFile;->mMiniThumbFile:Ljava/io/RandomAccessFile;
 
     if-nez v4, :cond_1
 
-    .line 109
     invoke-direct {p0}, Landroid/media/MiniThumbFile;->removeOldFile()V
 
-    .line 110
-    const/4 v4, 0x3
+    const/4 v4, 0x4
 
     invoke-direct {p0, v4}, Landroid/media/MiniThumbFile;->randomAccessFilePath(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 111
     .local v3, "path":Ljava/lang/String;
     new-instance v4, Ljava/io/File;
 
@@ -629,20 +633,17 @@
     .locals 3
 
     .prologue
-    .line 96
-    const/4 v2, 0x2
+    const/4 v2, 0x3
 
     invoke-direct {p0, v2}, Landroid/media/MiniThumbFile;->randomAccessFilePath(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 97
     .local v1, "oldPath":Ljava/lang/String;
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 98
     .local v0, "oldFile":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
