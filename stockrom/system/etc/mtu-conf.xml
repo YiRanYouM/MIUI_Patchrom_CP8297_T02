@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<mtus TotalItem="17">
+    <mtu operator="46003"  
+    	   default_2g="1460"  	   
+         default_3g="1460"
+         mms_2g="1460"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"         
+    />
+    <mtu operator="46012" 
+    	   default_2g="1460"  	   
+         default_3g="1460"
+         mms_2g="1460"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="46099" 
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="20404" 
+    	   default_2g="1460"  	   
+         default_3g="1460"
+         mms_2g="1460"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="45404" 
+    	   default_2g="1460"  	   
+         default_3g="1460"
+         mms_2g="1460"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="46013"  
+    	   default_2g="1460"  	   
+         default_3g="1460"
+         mms_2g="1460"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="45502"  
+    	   default_2g="1460"  	   
+         default_3g="1460"
+         mms_2g="1460"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="46007" 
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="46000" 
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="46002"   
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="45409"   
+    	   default_2g="1460"  	   
+         default_3g="1460"
+         mms_2g="1460"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+    <mtu operator="46001"    	
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1300"
+         unknown_3g="1460"
+    />
+    <mtu operator="45407" 
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1300"
+         unknown_3g="1460"
+    />   
+    <mtu operator="40589" 
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1300"
+         unknown_3g="1460"
+    />   
+    <mtu operator="40400" 
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1300"
+         unknown_3g="1460"
+    />   
+    <mtu operator="45429" 
+    	   default_2g="1300"  	   
+         default_3g="1460"
+         mms_2g="1300"
+         mms_3g="1460"
+         unknown_2g="1300"
+         unknown_3g="1460"
+    />   
+    <mtu operator="00000"  
+    	   default_2g="1460"  	   
+         default_3g="1460"
+         mms_2g="1460"
+         mms_3g="1460"
+         unknown_2g="1460"
+         unknown_3g="1460"
+    />
+</mtus>
+

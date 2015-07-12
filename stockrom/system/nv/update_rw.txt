@@ -1,0 +1,38 @@
+File Path: F:\Core\work\projects\8716\8716_P0_APT_Allband_OK.qcn
+   File Version: Major 2, Minor 0, Revision 0
+   File Summary:
+      Phone Model: 0 [Unknown Model], Configuration Name: default, Total NV Item Count: 739
+   Phone Model 0 [Unknown Model] Configurations:
+      Configuration Name: default
+         Mobile Properties: 
+            ESN: 0x00000000
+            Phone Model: 0 [Unknown Model]
+            NV Major: 0
+            NV Minor: 0
+            SW Version: MPSS.DPM.1.0.c7-00030-M8916EAAAANVZM-1
+            Client Name: QPST Software Download 2.7.0.395
+         Feature Mask:
+            Unknown
+         Roaming Lists:
+         Provisioning Item Files:
+         /nv/item_files/pbm/pbm_hardcoded_ecc_config: size 1
+         00
+      NV Items:
+       NV item: 7165 [NV_GNSS_OEM_FEATURE_MASK_I], index 0
+             NV_GNSS_OEM_FEATURE_MASK_I 0: 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+             NV_GNSS_OEM_FEATURE_MASK_I 1: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+             NV_GNSS_OEM_FEATURE_MASK_I 2: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+             NV_GNSS_OEM_FEATURE_MASK_I 3: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+             NV_GNSS_OEM_FEATURE_MASK_I 4: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+             NV_GNSS_OEM_FEATURE_MASK_I 5: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+             NV_GNSS_OEM_FEATURE_MASK_I 6: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+             NV_GNSS_OEM_FEATURE_MASK_I 7: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+         NV item: 2808 [NV_SW_VERSION_INFO_I], index 0
+            NV_SW_VERSION_INFO_I 0: 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01
+            NV_SW_VERSION_INFO_I 1: 01 01 01 01 01 01 01 01 01 01 01 02 04 14 00 00
+            NV_SW_VERSION_INFO_I 2: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+            NV_SW_VERSION_INFO_I 3: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+            NV_SW_VERSION_INFO_I 4: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+            NV_SW_VERSION_INFO_I 5: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+            NV_SW_VERSION_INFO_I 6: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+            NV_SW_VERSION_INFO_I 7: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00

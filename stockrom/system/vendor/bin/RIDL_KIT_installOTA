@@ -1,0 +1,67 @@
+#!/system/bin/sh
+
+set -ex
+
+mount -o remount,rw /system
+
+# Set permissions
+chmod 777 /data/SelfHost/startRIDL.sh
+chmod 777 /data/SelfHost/FixPermissions.exe
+
+# Run FixPermissions
+/data/SelfHost/FixPermissions.exe
+
+# Add libtar library
+chown root:root /data/SelfHost/libtar.so
+chmod 644 /data/SelfHost/libtar.so
+
+# Add libsregex library
+chown root:root /data/SelfHost/libsregex.so
+chmod 644 /data/SelfHost/libsregex.so
+
+# Uninstall previous versions
+pm uninstall org.kde.necessitas.ministro || true
+pm uninstall org.kde.necessitas.RIDL || true
+pm uninstall com.qualcomm.android.riddle || true
+pm uninstall com.qualcomm.RIDL || true
+rm -rf /data/local/qt
+
+# Flushing package cache (in case moving from system app to data)
+if [ -f /system/app/RIDLClient.apk ]; then
+	rm -f /system/app/RIDLClient.apk
+	rm -f /system/app/RIDLC2SService.apk
+	rm -f /system/vendor/bin/RIDL*
+	rm -f /system/vendor/bin/FixPermissions.exe
+	rm -rf /data/data/com.qualcomm.RIDL
+	rm -rf /data/data/com.qualcomm.android.riddle
+	stop
+	start
+
+	# Wait for PM to restart
+	while pm list packages 2>&1 | grep "Is the system running"; do
+		sleep 5
+	done
+fi
+
+# Remove device ID file, if it exists
+rm -f /data/SelfHost/DeviceID.txt
+
+# Install RIDL
+pm install -t -r /data/SelfHost/RIDLClient.apk
+rm /data/SelfHost/RIDLClient.apk
+
+# Add LogKit II rules
+mkdir -p /data/data/com.qualcomm.RIDL/databases/
+cp /data/SelfHost/RIDLC2S_Rules.db /data/data/com.qualcomm.RIDL/databases/
+
+# Grant permissions for access to DropBoxManager for app crash detection
+pm grant com.qualcomm.RIDL android.permission.READ_LOGS
+
+# Launch RIDL app
+am start com.qualcomm.RIDL/.cUserComponent
+
+# Sleep 10s to allow programs to load
+sleep 10
+
+# Reboot
+reboot

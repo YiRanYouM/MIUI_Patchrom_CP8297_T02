@@ -1,0 +1,9 @@
+#!/system/bin/sh
+
+# Script to start "ylkeydbbu" on the device
+#
+
+base=/system
+export CLASSPATH=$base/framework/ylkeydbbu.jar
+exec app_process $base/bin com.yulong.commands.bu.KeydbBackup "$@"
+

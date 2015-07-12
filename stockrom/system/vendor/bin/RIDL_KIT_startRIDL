@@ -1,0 +1,38 @@
+#!/system/bin/sh
+
+# Mount debugfs to /d for use by MM graphic rules
+mount -t debugfs none /d
+
+# Create link to libtar if not present
+if ! ls /system/vendor/lib/libtar.so > /dev/null
+then
+   mount -o remount,rw /system
+   ln -s /data/SelfHost/libtar.so /system/vendor/lib/libtar.so
+   mount -o remount,ro /system
+fi
+
+# Create link to libsreges.so if not present
+if ! ls /system/vendor/lib/libsregex.so > /dev/null
+then
+   mount -o remount,rw /system
+   ln -s /data/SelfHost/libsregex.so /system/vendor/lib/libsregex.so
+   mount -o remount,ro /system
+fi
+
+# Check init.qcom.post_boot.sh
+if ! grep startRIDL.sh /system/etc/init.qcom.post_boot.sh > /dev/NULL
+then
+   mount -o remount,rw /system
+   cp /system/etc/init.qcom.post_boot.sh /data/SelfHost/
+   chmod 666 /data/SelfHost/init.qcom.post_boot.sh
+   echo "/data/SelfHost/startRIDL.sh" >> /data/SelfHost/init.qcom.post_boot.sh
+   cp /data/SelfHost/init.qcom.post_boot.sh /system/etc/
+   mount -o remount,ro /system
+fi
+
+# Check media_rw permissions
+/data/SelfHost/FixPermissions.exe
+
+# Start RIDL service
+/data/SelfHost/RIDLClient.exe &
+

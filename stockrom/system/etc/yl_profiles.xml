@@ -1,0 +1,525 @@
+<PROFILES>
+<!-- pls move this file to project : yulong/device/yulong/CP**** -->
+<PROFILE Label="APP_PROFILE_FEATURE" Release="Yes">
+<APPLICATION Label="APP_PROFILE_FEATURE"/>
+<PROPERTY Label="POWER_HINT" Value="true"/>
+</PROFILE>
+
+
+<!-- yulong begin, platform-QC-8974AB, cuizhouhua&sunhonghui, 2014.03.31 -->
+
+<!--QC8974AB cpu freqs:  300000 422400 652800 729600 883200 960000 1036800 1190400 1267200 1497600 1574400 1728000 1958400 2265600 -->
+<!--QC8974AB gpu freqs:  578000000 462400000 462400000 389000000 389000000 320000000 320000000 200000000 200000000 -->
+<!--QC8926 cpu freqs:  300000 384000 600000 787200 998400 1094400 1190400 -->
+<!--QC8926 gpu freqs:  450000000 320000000 200000000 -->
+<!--QC8916 cpu freqs:  200000 400000 533333 800000 998400 1094400 1190400 -->
+<!--QC8916 gpu freqs:  400000000 310000000 200000000 -->
+
+<!-- for yulong COOLPAD SCENE, ChenYong, 2013.11.12 -->
+<PROFILE Label="POWER_HINT_COOLPAD_SCENE" Release="Yes">
+<APPLICATION Label="POWER_HINT_COOLPAD_SCENE"/>
+<ACTIVITY Label="CP_POWER_HINT_CAMERA_PREVIEW">
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="time_out_ms" Value="100"/>
+</ACTIVITY>
+<ACTIVITY Label="CP_POWER_HINT_CAMERA_TAKE_PICTURE">
+<PROPERTY Label="cpu_freq_min" Value="1190400"/>
+<PROPERTY Label="min_online_cpus" Value="2"/>
+<PROPERTY Label="time_out_ms" Value="200"/>
+</ACTIVITY>
+<ACTIVITY Label="CP_POWER_HINT_CAMERA_TAKE_VIDEO">
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="time_out_ms" Value="200"/>
+</ACTIVITY>
+</PROFILE>
+
+<PROFILE Label="POWER_HINT_HAND_WRITE" Release="Yes">
+<APPLICATION Label="POWER_HINT_HAND_WRITE"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="time_out_ms" Value="100"/>
+</PROFILE>
+
+<PROFILE Label="POWER_HINT_WHEN_SCREENON" Release="Yes">
+<APPLICATION Label="POWER_HINT_WHEN_SCREENON"/>
+<PROPERTY Label="cpu_freq_min" Value="1190400"/>
+<PROPERTY Label="min_online_cpus" Value="4"/>
+<PROPERTY Label="time_out_ms" Value="1000"/>
+</PROFILE>
+
+<PROFILE Label="POWER_HINT_AFTER_SCREENOFF" Release="Yes">
+<APPLICATION Label="POWER_HINT_AFTER_SCREENOFF"/>
+<PROPERTY Label="cpu_freq_max" Value="1094400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="time_out_ms" Value="1000"/>
+</PROFILE>
+
+<PROFILE Label="POWER_HINT_LOW_BATTERY" Release="Yes">
+<APPLICATION Label="POWER_HINT_LOW_BATTERY"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="time_out_ms" Value="64000"/>
+</PROFILE>
+
+<PROFILE Label="POWER_HINT_FINISH_ACTIVITY" Release="Yes">
+<APPLICATION Label="POWER_HINT_FINISH_ACTIVITY"/>
+<PROPERTY Label="cpu_freq_min" Value="1190400"/>
+<PROPERTY Label="min_online_cpus" Value="2"/>
+<PROPERTY Label="time_out_ms" Value="500"/>
+</PROFILE>
+
+<PROFILE Label="POWER_HINT_START_APP" Release="Yes">
+<APPLICATION Label="POWER_HINT_START_APP"/>
+<PROPERTY Label="cpu_freq_min" Value="1190400"/>
+<PROPERTY Label="min_online_cpus" Value="4"/>
+<PROPERTY Label="time_out_ms" Value="800"/>
+</PROFILE>
+
+<PROFILE Label="POWER_HINT_APP_LAUNCH" Release="Yes">
+<APPLICATION Label="POWER_HINT_APP_LAUNCH"/>
+<PROPERTY Label="cpu_freq_min" Value="1190400"/>
+<PROPERTY Label="min_online_cpus" Value="4"/>
+<PROPERTY Label="time_out_ms" Value="800"/>
+</PROFILE>
+
+
+<PROFILE Label="POWER_HINT_INTERACTION" Release="Yes">
+<APPLICATION Label="POWER_HINT_INTERACTION"/>
+<PROPERTY Label="cpu_freq_min" Value="998400"/>
+<PROPERTY Label="min_online_cpus" Value="2"/>
+<PROPERTY Label="time_out_ms" Value="500"/>
+</PROFILE>
+<!-- yulong end -->
+
+<!-- for yulong app profiles, cuizhouhua&yangkun, 2013.09.11 -->
+<PROFILE Label="camera" Release="Yes">
+<APPLICATION Label="com.android.camera"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="4"/>
+</PROFILE>
+
+<PROFILE Label="huishuohuadetomcat" Release="Yes">
+<APPLICATION Label="com.outfit7.talkingtomcat"/>
+<PROPERTY Label="cpu_freq_max" Value="800000"/>
+</PROFILE>
+
+<PROFILE Label="huishuohuadetomcat2" Release="Yes">
+<APPLICATION Label="com.outfit7.talkingtom2"/>
+<PROPERTY Label="cpu_freq_max" Value="800000"/>
+</PROFILE>
+
+<PROFILE Label="mytom" Release="Yes">
+<APPLICATION Label="com.outfit.speak"/>
+<PROPERTY Label="cpu_freq_max" Value="800000"/>
+</PROFILE>
+
+<PROFILE Label="fetion" Release="Yes">
+<APPLICATION Label="cn.com.fetion"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+</PROFILE>
+
+<PROFILE Label="heReader" Release="Yes">
+<APPLICATION Label="com.ophone.reader.ui"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+</PROFILE>
+
+<PROFILE Label="wpsReader" Release="Yes">
+<APPLICATION Label="cn.wps.moffice_eng"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+</PROFILE>
+
+<PROFILE Label="coolhealth" Release="Yes">
+<APPLICATION Label="com.yulong.android.health"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="Browser" Release="Yes">
+<APPLICATION Label="com.android.browser"/>
+<PROPERTY Label="cpu_freq_max" Value="800000"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="qqBrowser" Release="Yes">
+<APPLICATION Label="com.tencent.mtt"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="ucBrowser" Release="Yes">
+<APPLICATION Label="com.UCMobile"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="sogouBrowser" Release="Yes">
+<APPLICATION Label="sogou.mobile.explorer"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="qihooBrowser" Release="Yes">
+<APPLICATION Label="com.qihoo.browser"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="baidusearchbox" Release="Yes">
+<APPLICATION Label="com.baidu.searchbox_coolpad"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="baiduBrowser" Release="Yes">
+<APPLICATION Label="com.baidu.browser.apps"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="oupengBrowser" Release="Yes">
+<APPLICATION Label="com.oupeng.mini.android"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="googleBrowser" Release="Yes">
+<APPLICATION Label="com.android.chrome"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="ttwindow" Release="Yes">
+<APPLICATION Label="com.yulong.ttwindow"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="dial" Release="Yes">
+<APPLICATION Label="com.yulong.android.contacts.dial"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="contacts" Release="Yes">
+<APPLICATION Label="com.yulong.android.contacts"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="mms" Release="Yes">
+<APPLICATION Label="com.android.mms"/>
+<ACTIVITY Label="com.yulong.android.mms.ui.MmsChatActivity">
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</ACTIVITY>
+<ACTIVITY Label="com.yulong.android.mms.ui.MmsSlideshowActivity">
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</ACTIVITY>
+</PROFILE>
+
+<PROFILE Label="settings" Release="Yes">
+<APPLICATION Label="com.android.settings"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="gallery3d.app.Gallery" Release="Yes">
+<APPLICATION Label="com.android.gallery3d"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="coolwind" Release="Yes">
+<APPLICATION Label="com.android.coolwind"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="200000000"/>
+</PROFILE>
+
+<PROFILE Label="weibo" Release="Yes">
+<APPLICATION Label="com.sina.weibo"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="4"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="weixin" Release="Yes">
+<APPLICATION Label="com.tencent.mm"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="4"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="yixin" Release="Yes">
+<APPLICATION Label="im.yixin"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="qq" Release="Yes">
+<APPLICATION Label="com.tencent.mobileqq"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="max_online_cpus" Value="4"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="tencentnews" Release="Yes">
+<APPLICATION Label="com.tencent.news"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="qqzone" Release="Yes">
+<APPLICATION Label="com.qzone"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="400000000"/>
+</PROFILE>
+
+<PROFILE Label="qiyi" Release="Yes">
+<APPLICATION Label="com.qiyi.video"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="taobao" Release="Yes">
+<APPLICATION Label="com.taobao.taobao"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="wangyiNews" Release="Yes">
+<APPLICATION Label="com.netease.newsreader.activity"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="sohuNews" Release="Yes">
+<APPLICATION Label="com.sohu.newsclient"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="calculator" Release="Yes">
+<APPLICATION Label="com.android.calculator2"/>
+<PROPERTY Label="cpu_freq_max" Value="1094400"/>
+</PROFILE>
+
+<PROFILE Label="weather" Release="Yes">
+<APPLICATION Label="com.icoolme.android.weather"/>
+<ACTIVITY Label=".activity.SmartWeatherActivity">
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</ACTIVITY>
+</PROFILE>
+
+<PROFILE Label="email" Release="Yes">
+<APPLICATION Label="com.android.email"/>
+<PROPERTY Label="cpu_freq_max" Value="800000"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="200000000"/>
+</PROFILE>
+
+<PROFILE Label="ireader" Release="Yes">
+<APPLICATION Label="com.chaozh.iReaderFree15"/>
+<ACTIVITY Label="com.zhangyue.iReader.read.ui.Activity_BookBrowser_TXT">
+<PROPERTY Label="cpu_freq_max" Value="1094400"/>
+</ACTIVITY>
+</PROFILE>
+
+<PROFILE Label="shuqireader" Release="Yes">
+<APPLICATION Label="com.shuqi.controller"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<ACTIVITY Label=".BookContent">
+<PROPERTY Label="cpu_freq_max" Value="1094400"/>
+</ACTIVITY>
+</PROFILE>
+
+<PROFILE Label="qvodplayer" Release="Yes">
+<APPLICATION Label="com.qvod.player"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="youkuvideo" Release="Yes">
+<APPLICATION Label="com.youku.phone"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="400000000"/>
+</PROFILE>
+
+<PROFILE Label="ppsvideo" Release="Yes">
+<APPLICATION Label="tv.pps.mobile"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="pptvvideo" Release="Yes">
+<APPLICATION Label="com.pplive.androidphone"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="sohuvideo" Release="Yes">
+<APPLICATION Label="com.sohu.sohuvideo"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="coolmap" Release="Yes">
+<APPLICATION Label="com.yulong.android.coolmap"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="gaodecoolmap" Release="Yes">
+<APPLICATION Label="com.autonavi.minimap.coolpad"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="gaodemap" Release="Yes">
+<APPLICATION Label="com.autonavi.minimap"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="baidumap" Release="Yes">
+<APPLICATION Label="com.baidu.BaiduMap"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="tianyimap" Release="Yes">
+<APPLICATION Label="com.pdager"/>
+<ACTIVITY Label=".base.map.MapActivity">
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</ACTIVITY>
+</PROFILE>
+
+<PROFILE Label="googlemap" Release="Yes">
+<APPLICATION Label="com.google.android.apps.maps"/>
+<ACTIVITY Label="com.google.android.maps.MapsActivity">
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</ACTIVITY>
+</PROFILE>
+
+<PROFILE Label="sogoumap" Release="Yes">
+<APPLICATION Label="com.sogou.map.android.maps"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="mapbarmap" Release="Yes">
+<APPLICATION Label="com.mapbar.android.mapbarmap"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="tigerbaodian" Release="Yes">
+<APPLICATION Label="com.tigerknows"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="kailide" Release="Yes">
+<APPLICATION Label="cld.navi.mainframe"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="daomangquan2013" Release="Yes">
+<APPLICATION Label="cn.com.tiros.android.navidog4x"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="daomangquan" Release="Yes">
+<APPLICATION Label="cn.com.tiros.android.navidog"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="max_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="googleEarth" Release="Yes">
+<APPLICATION Label="com.google.earth"/>
+<ACTIVITY Label=".EarthActivity">
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</ACTIVITY>
+</PROFILE>
+
+<PROFILE Label="angrybirds" Release="Yes">
+<APPLICATION Label="com.rovio.angrybirds"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="tiantiankupao" Release="Yes">
+<APPLICATION Label="com.tencent.pao"/>
+<PROPERTY Label="cpu_freq_max" Value="998400"/>
+<PROPERTY Label="min_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="leitingzhanji" Release="Yes">
+<APPLICATION Label="com.tencent.clover"/>
+<PROPERTY Label="cpu_freq_min" Value="998400"/>
+<PROPERTY Label="min_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="tiantianfeiche" Release="Yes">
+<APPLICATION Label="com.tencent.game.SSGame"/>
+<PROPERTY Label="cpu_freq_min" Value="998400"/>
+<PROPERTY Label="min_online_cpus" Value="2"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+<PROFILE Label="Kuaiting" Release="Yes">
+<APPLICATION Label="com.vectorunit.bluehuawei"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+</PROFILE>
+
+<PROFILE Label="Fishman1" Release="Yes">
+<APPLICATION Label="org.cocos2dx.FishGame"/>
+<PROPERTY Label="cpu_freq_max" Value="800000"/>
+<PROPERTY Label="gpu_freq_max" Value="200000000"/>
+</PROFILE>
+
+<PROFILE Label="Fishman2" Release="Yes">
+<APPLICATION Label="org.cocos2dx.FishingJoy2"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="shenmiao2" Release="Yes">
+<APPLICATION Label="com.imangi.templerun2"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="310000000"/>
+</PROFILE>
+
+<PROFILE Label="mojinxianzong" Release="Yes">
+<APPLICATION Label="com.disney.troz"/>
+<PROPERTY Label="cpu_freq_max" Value="1190400"/>
+<PROPERTY Label="gpu_freq_max" Value="400000000"/>
+</PROFILE>
+
+<PROFILE Label="antutu" Release="Yes">
+<APPLICATION Label="com.antutu.ABenchMark"/>
+<PROPERTY Label="cpu_freq_min" Value="1190400"/>
+<PROPERTY Label="min_online_cpus" Value="3"/>
+<PROPERTY Label="gpu_freq_min" Value="400000000"/>
+</PROFILE>
+<!-- yulong end -->
+
+</PROFILES>

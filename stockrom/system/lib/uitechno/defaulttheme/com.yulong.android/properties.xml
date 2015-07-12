@@ -1,0 +1,9 @@
+﻿<root>
+  <color key="ab_tabbar_text_color_normal" value="0xB2FFFFFF"/>
+  <color key="ab_tabbar_text_color_selected" value="0xFFFFFFFF"/>
+  <color key="listview_background_color" value="0xFFF5F5F5"/>
+  <string key="listview_disable_item_need_divider" value="false"/>
+  <string key="theme_resource_style" value="rigo"/>    
+  <color key="tabdialog_text_color_normal" value="0xB2FFFFFF" />
+  <color key="tabdialog_text_color_selected" value="0xFFFFFFFF" />
+</root>

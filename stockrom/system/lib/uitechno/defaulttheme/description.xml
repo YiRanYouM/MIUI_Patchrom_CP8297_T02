@@ -1,0 +1,20 @@
+﻿<root>
+	  <item key="label" value="Fairyland"/>
+		<item key="label-zh-rCN" value="大神出界·仙境"/>
+    <item key="isdefault" value="true" />
+		<!-- 主界面缩略图  -->
+    <item key="prev_main" value="res/preview02.png"/>              
+    <!-- 详情缩略图res/preview01.[prev_postfix] to res/preview_(prev_num).[prev_postfix] -->
+		<!-- 不写默认后缀.png -->
+		<item key="prev_postfix"  value=".png"/>
+		<!-- 详情缩略图个数 -->
+		<item key="prev_num" value="6"/>
+		<item key="local_color" value="green" />    
+		<item key="effect" value="1" />
+		<item key="keyguard_style" value="com.example.googlelockscreen" /> 
+		<item key="font_style" value="default" />
+    <item key="version" value="3"/>
+		<item key="launcherVersion" value="5"/>
+		<item key="themeVersion" value="1"/>
+		
+</root>

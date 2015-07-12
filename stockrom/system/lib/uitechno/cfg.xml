@@ -1,0 +1,40 @@
+﻿<root>
+    <component name="common">
+    </component>
+    <component name="launcher">
+        <item key="widgetSort" value="com.android.music.MediaAppBigWidgetProvider;com.yulong.android.weatherwidget.WeatherWidget;com.yulong.android.calendar.widget.CalendarMonthWidgetProvider;com.yulong.android.xtimewidget.AnalogAppWidgetProvider;com.icoolme.android.weather.widget.WeatherWidgetHighProvider;com.yulong.android.xtimewidget.WorldClockProvider;com.yulong.android.calendar.widget.CalendarAppWidgetProvider;com.android.music.MediaAppWidgetProvider;com.yulong.android.memo.widget.MyWidgetProvider;com.yulong.android.showwidget.CoolShowWidget;com.yulong.android.network.widget.NetworkWidgetProvider;com.yulong.android.weibo.appwidget.FavoriteContactsWidgetProvider;com.android.email.provider.WidgetProvider;com.android.browser.widget.BookmarkThumbnailWidgetProvider;com.android.gallery3d.gadget.PhotoAppWidgetProvider;com.android.quicksearchbox.SearchWidgetProvider;com.android.contacts.socialwidget.SocialWidgetProvider"/>
+        <item key="FORCE_DISABLE_GUARD_MODE" value="true"/>
+        <item key="SHOW_DYNAMIC_ICON" value="false" />
+        <item key="DEFAULT_SCROLL_ANIMATION" value="2"/>
+        <item key="DEFAULT_SHOW_TTWINDOW" value="true"/>
+    </component>
+    <component name="systemUI">
+        <item key="networkType" value="GG"/>
+        <item key="cardName" value="uim"/>
+        <item key="shortcutDefOrder" value="0,17,18,28,31,9,2,10,7,3,5,1,16,11,12,22,19,20,4" />
+        <item key="shortcutExclude" value="14" />
+    </component>
+    <component name="gps">
+    </component>
+    <component name="widget">
+        <item key="maximumVelocity" value="30000"/>
+        <item key="velocityScale" value="2"/>
+        <item key="minVelocity" value="2000"/>
+        <item key="scrollMinVelocity" value="2000"/>
+        <item key="horizontalScrollView_velocityScale" value="1.5"/>
+        <item key="horizontalScrollView_scrollMinVelocity" value="1200"/>
+        <item key="scrollView_velocityScale" value="1.5"/>
+        <item key="scrollView_scrollMinVelocity" value="1200"/>
+    </component>
+    <component name="seccenter">
+    </component>    
+    <component name="common">
+        <item key="receiveBroadcast" value="android.intent.action.BOOT_COMPLETED"/>
+    </component>    
+    <component name="retailMode">
+           <item key="CONTENT_PATH" value="/storage/emulated/0/retail"/>
+    </component>
+    <component name="coolshow">
+        <item key="lockscreenText" value="神自不凡"/>
+    </component>
+</root>
